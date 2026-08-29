@@ -287,33 +287,49 @@ erDiagram
 
 ## 🧠 4. Mathematical Formulation & AI Decision Matrix
 
-Krishi Copilot translates physical agricultural telemetry into rigorous mathematical decision algorithms:
+Krishi Copilot translates physical agricultural telemetry into deterministic mathematical decision models:
 
-### **A. Multi-Spectral NDVI Vegetation Canopy Vigor**
-Computed from Sentinel-2 optical Bands 8 (Near-Infrared, $\lambda = 842\text{ nm}$) and 4 (Visible Red, $\lambda = 665\text{ nm}$):
-$$\text{NDVI} = \frac{\rho_{\text{NIR}} - \rho_{\text{RED}}}{\rho_{\text{NIR}} + \rho_{\text{RED}}}$$
+### **A. Multi-Spectral NDVI Canopy Vigor Formula**
+Computed from Sentinel-2 optical Band 8 (Near-Infrared, 842 nm) and Band 4 (Visible Red, 665 nm):
 
-$$\text{Health Status} = \begin{cases} 
-\text{🟢 FLOURISHING (Optimal Chlorophyll)}, & \text{NDVI} \ge 0.75 \\
-\text{🟡 WATER / NUTRIENT STRESS}, & 0.60 \le \text{NDVI} < 0.75 \\
-\text{🔴 SEVERE PEST / FUNGAL NECROSIS}, & \text{NDVI} < 0.60 
-\end{cases}$$
+```
+          (NIR Band 8 - RED Band 4)
+  NDVI = ---------------------------
+          (NIR Band 8 + RED Band 4)
+```
 
----
-
-### **B. Closed-Loop Composite Farm Risk Index ($\mathcal{R}_{\text{farm}}$)**
-A dynamic weighted synthesis across 5 risk dimensions scaled on a $[0, 100]$ index:
-$$\mathcal{R}_{\text{farm}} = \omega_w \cdot \mathcal{R}_{\text{weather}} + \omega_p \cdot \mathcal{R}_{\text{pest}} + \omega_s \cdot \mathcal{R}_{\text{water}} + \omega_c \cdot \mathcal{R}_{\text{crop}} + \omega_m \cdot \mathcal{R}_{\text{market}}$$
-
-Where normalized weights satisfy $\sum_{i} \omega_i = 1.0$:
-$$\mathcal{R}_{\text{farm}} = (0.35 \cdot \mathcal{R}_{\text{weather}}) + (0.25 \cdot \mathcal{R}_{\text{pest}}) + (0.20 \cdot \mathcal{R}_{\text{water}}) + (0.15 \cdot \mathcal{R}_{\text{crop}}) + (0.05 \cdot \mathcal{R}_{\text{market}})$$
+| NDVI Range | Crop Canopy Health Status | Recommended System Action |
+| :--- | :--- | :--- |
+| **0.75 to 1.00** | 🟢 **FLOURISHING** (Optimal Chlorophyll) | Maintain regular nutrient scheduling |
+| **0.60 to 0.74** | 🟡 **WATER / NUTRIENT STRESS** | Trigger precision drip irrigation & bio-fertilizer |
+| **< 0.60** | 🔴 **SEVERE PEST / FUNGAL NECROSIS** | Alert farmer for immediate leaf spot diagnostic |
 
 ---
 
-### **C. Chemical Runoff Financial & Environmental Loss ($\mathcal{L}_{\text{loss}}$)**
-When spraying occurs within a rain forecast window ($t_{\text{rain}} < 4\text{ hours}$):
-$$\mathcal{L}_{\text{loss}} = \left( C_{\text{chem}} \times A_{\text{farm}} \right) + \left( P_{\text{pump}} \times t_{\text{spray}} \right) + \mathcal{E}_{\text{toxicity}}$$
-$$\mathcal{L}_{\text{loss}} = (₹1,200 \times 3.2\text{ Acres}) + (₹350) + \text{Ecological Penalty} \approx \mathbf{₹4,190\text{ Wasted}}$$
+### **B. Closed-Loop Composite Farm Risk Index (R_farm)**
+A dynamic weighted synthesis across 5 risk dimensions scaled on a [0, 100] index:
+
+```
+  R_farm = (0.35 × R_weather) + (0.25 × R_pest) + (0.20 × R_water) + (0.15 × R_crop) + (0.05 × R_market)
+```
+
+* **R_weather (35% Weight):** 24-hour IMD precipitation radar, wind velocity, and storm probability.
+* **R_pest (25% Weight):** Ambient relative humidity (>80%) and temperature (>28°C) fungal growth thresholds.
+* **R_water (20% Weight):** 15cm shallow root zone soil volumetric moisture content.
+* **R_crop (15% Weight):** Phenological stage vulnerability (e.g. flowering/boll formation is high risk).
+* **R_market (5% Weight):** APMC mandi price volatility index.
+
+---
+
+### **C. Chemical Runoff Financial & Ecological Loss (L_loss)**
+Calculated when spraying occurs within an approaching rain window (t_rain < 4 hours):
+
+```
+  L_loss = (Chemical Cost × Farm Acreage) + Pumping Energy + Ecological Penalty
+  L_loss = (₹1,200 × 3.2 Acres) + ₹350 + ₹600 = ₹4,790 WASTED
+```
+
+> **🚨 Resulting AI Decision:** The system triggers an immediate **"🛑 STOP! DO NOT SPRAY"** advisory, preventing ₹4,790 in wasted chemicals and soil toxicity.
 
 ---
 
