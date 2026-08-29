@@ -353,5 +353,28 @@ export interface ProactiveAlert {
   resolved: boolean;
 }
 
+export interface AppliedSchemeApplication {
+  id: string;
+  schemeId: string;
+  schemeName: string;
+  schemeCode: string;
+  subsidyValue: string;
+  applicantName: string;
+  phone: string;
+  village: string;
+  district: string;
+  state: string;
+  aadhaarLast4: string;
+  khasraNumber: string;
+  bankAccountLast4: string;
+  ifscCode: string;
+  submittedAt: string;
+  status: 'submitted' | 'under_review' | 'physical_inspection' | 'approved_dbt_scheduled';
+  statusLabelHindi: string;
+  trackingStep: number; // 1: Submitted, 2: Document Verification, 3: Field Inspection, 4: Approved & DBT
+  talukaOffice: string;
+  estimatedDisbursementDate: string;
+}
+
 export * from './logisticsTypes';
 export * from './authTypes';
