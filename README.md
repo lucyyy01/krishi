@@ -29,36 +29,57 @@
 
 ## 🏛️ 1. Enterprise System Context & C4 Architecture
 
-### **C4 Level 1: System Context Diagram**
-The system context illustrates how **Krishi Copilot** acts as the central intelligence nexus orchestrating data from satellites, meteorological radar, soil IoT, agricultural markets, and financial rails.
+### **C4 Level 1: Enterprise System Context Diagram**
+The system context illustrates how **Krishi Copilot** acts as the central intelligence nexus orchestrating data from satellites, meteorological radar, soil IoT, agricultural markets, and financial rails:
 
 ```mermaid
-C4Context
-    title System Context Diagram (C4 Level 1) - Krishi Copilot Agritech Ecosystem
+flowchart TB
+    %% STAKEHOLDERS SUBGRAPH
+    subgraph STAKEHOLDERS ["👥 PRIMARY AGRICULTURAL STAKEHOLDERS"]
+        FARMER["👨🏽‍🌾 Verified Farmer<br/><b>Landholding: 0.5 - 20 Acres</b><br/>• Daily Action Plan & STOP/DO Badges<br/>• What-If Consequence Simulator<br/>• Truck Booking & Labour Hiring"]
+        LABOURER["👷 Farm Labour / Operator<br/><b>Skilled Agricultural Workforce</b><br/>• Job Stream (Harvesting / Sowing)<br/>• Transparent Daily Wage Tracking<br/>• Worker Registration"]
+        DRIVER["🚚 Logistics Fleet Operator<br/><b>Rural Transport Provider</b><br/>• Live Harvest Pickup Dispatches<br/>• APMC Mandi Transit Routes<br/>• Transparent ₹/km Fares"]
+    end
 
-    Person(farmer, "👨🏽‍🌾 Verified Farmer", "Smallholder farmer managing crop health, seeking timely DO/STOP actions & logistics.")
-    Person(labourer, "👷 Farm Labour / Operator", "Agricultural worker or crew leader seeking local daily wage jobs & tractor tasks.")
-    Person(driver, "🚚 Logistics Operator", "Rural truck/trolley owner providing harvest transit from farm to APMC mandis.")
+    %% CORE SYSTEM SUBGRAPH
+    subgraph CORE_PLATFORM ["🌾 KRISHI COPILOT ENTERPRISE PLATFORM (CENTRAL NEXUS)"]
+        DECISION_CORE["🧠 AI Prescriptive Engine<br/>• STOP / DO Daily Decisions<br/>• ₹ Savings & Timing Windows"]
+        VISION_CORE["📸 Crop Disease Vision CNN<br/>• Leaf Diagnostic & Safe Spray Window"]
+        SIM_CORE["🌦️ What-If Consequence Simulator<br/>• Rain & Moisture Risk Physics"]
+        SCHEME_CORE["💰 Government Scheme Matcher<br/>• 3-Step Apply $\to$ Review $\to$ Live DBT Tracking"]
+        LOGISTICS_CORE["🚚 Rural Supply Chain Hub<br/>• GPS Truck Fleet & Labour Marketplace"]
+        VOICE_CORE["🎙️ Vernacular Audio Brain<br/>• 9 Indian Languages Speech Synthesis"]
+    end
 
-    System(krishi_sys, "🌾 Krishi Copilot Enterprise Platform", "Core reactive decision engine, consequence simulator, vision diagnostic, and rural marketplace hub.")
+    %% EXTERNAL DATA INGESTION
+    subgraph TELEMETRY_GRID ["📡 NATIONAL TELEMETRY & INSTITUTIONAL GRIDS"]
+        IMD["🌧️ IMD Weather Radar Grid<br/><i>1km x 1km Numerical Forecast (Rain, Temp, Wind)</i>"]
+        SENTINEL["🛰️ ESA Sentinel-2 Satellites<br/><i>Multi-Spectral 10m Canopy NDVI Imagery</i>"]
+        MANDI["🏛️ e-NAM / APMC Gateway<br/><i>Live Modal Auction Rates & 24h Trends</i>"]
+        DBT["🧪 DBT Subsidized Fertilizer Portal<br/><i>Fixed MRPs (Urea ₹266.5, DAP ₹1,350) & Kendra Stocks</i>"]
+        IOT["📡 In-Situ Soil IoT Nodes<br/><i>Dual-Depth 15cm/30cm Moisture & Smart Solenoid Drip</i>"]
+        UPI["💳 NPCI UPI / Banking Rails<br/><i>1.0% P2P Micro-Loans & Direct Wage Payouts</i>"]
+    end
 
-    System_Ext(imd_weather, "🌧️ IMD Weather Grid", "1km x 1km numerical forecast radar (Rain mm, Humidity, Temp, Wind).")
-    System_Ext(sentinel_sat, "🛰️ ESA Sentinel-2 Satellites", "Multi-spectral optical imagery delivering 10m NDVI canopy vigor feeds.")
-    System_Ext(enam_mandi, "🏛️ e-NAM / APMC Gateway", "National agricultural market auction prices, modal rates & daily arrivals.")
-    System_Ext(dbt_fertilizer, "🧪 DBT Fertilizer Portal", "Government subsidized MRP rates (Urea ₹266.50, DAP ₹1,350) & Kendra stocks.")
-    System_Ext(iot_hardware, "📡 In-Situ Soil IoT Nodes", "Dual-depth capacitive probes (15cm/30cm) & smart solenoid drip actuators.")
-    System_Ext(upi_gateway, "💳 NPCI UPI / Banking Rails", "Direct peer micro-loan disbursements (1.0% interest) & instant wage payouts.")
+    %% RELATIONSHIPS
+    FARMER <==>|"HTTPS / Vernacular Voice & Touch"| CORE_PLATFORM
+    LABOURER <==>|"HTTPS / Job Offers & Availability"| CORE_PLATFORM
+    DRIVER <==>|"HTTPS / Fleet Booking & Calls"| CORE_PLATFORM
 
-    Rel(farmer, krishi_sys, "Consults daily action plans, simulates decisions, books trucks & hires labour", "HTTPS / WSS")
-    Rel(labourer, krishi_sys, "Registers worker profile, accepts farm job requests, tracks earnings", "HTTPS / Mobile")
-    Rel(driver, krishi_sys, "Receives harvest pickup dispatches, manages trips", "HTTPS / Mobile")
+    IMD -->|"REST / JSON Precipitation Windows"| DECISION_CORE
+    SENTINEL -->|"OGC WCS / GeoTIFF Multi-Spectral"| DECISION_CORE
+    MANDI -->|"API Gateway / Real-Time Modal Prices"| LOGISTICS_CORE
+    DBT -->|"REST / Subsidized Store Inventory"| SCHEME_CORE
+    IOT <==>|"MQTT / Bi-Directional Valve Telemetry"| DECISION_CORE
+    CORE_PLATFORM <==>|"NPCI UPI / Instant Payouts"| UPI
 
-    Rel(krishi_sys, imd_weather, "Polls hyper-local radar telemetry & precipitation windows", "REST / JSON")
-    Rel(krishi_sys, sentinel_sat, "Extracts multi-spectral NIR/Red bands for NDVI computation", "OGC WCS / GeoTIFF")
-    Rel(krishi_sys, enam_mandi, "Synchronizes APMC daily modal prices & historical trendlines", "API Gateway")
-    Rel(krishi_sys, dbt_fertilizer, "Tracks authorized Krishi Kendra buffer stocks & DBT subsidies", "REST API")
-    Rel(krishi_sys, iot_hardware, "Bi-directional telemetry & remote solenoid valve actuation", "MQTT / LoRaWAN")
-    Rel(krishi_sys, upi_gateway, "Executes peer micro-lending & direct wage transactions", "NPCI UPI API")
+    classDef stakeholder fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#fff;
+    classDef core fill:#064e3b,stroke:#34d399,stroke-width:3px,color:#fff;
+    classDef external fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff;
+
+    class FARMER,LABOURER,DRIVER stakeholder;
+    class CORE_PLATFORM,DECISION_CORE,VISION_CORE,SIM_CORE,SCHEME_CORE,LOGISTICS_CORE,VOICE_CORE core;
+    class IMD,SENTINEL,MANDI,DBT,IOT,UPI external;
 ```
 
 ---
@@ -400,8 +421,8 @@ flowchart TD
 ### **Local Setup**
 ```bash
 # 1. Clone the repository
-git clone https://github.com/lucyyy01/Krishi-Seva.git
-cd Krishi-Seva
+git clone https://github.com/lucyyy01/krishi.git
+cd krishi
 
 # 2. Install dependencies (React 19, TypeScript, Lucide, Tailwind)
 npm install
