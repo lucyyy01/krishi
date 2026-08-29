@@ -1,392 +1,437 @@
 <div align="center">
 
-# 🌾 Krishi Copilot (कृषि को-पायलट)
-### *AI-Powered Integrated Farming Decision Support & Precision Agritech Platform*
+```
+██╗  ██╗██████╗ ██╗███████╗██╗  ██╗██╗    ██████╗ ██████╗ ██████╗ ██╗██╗      ██████╗ ████████╗
+██║ ██╔╝██╔══██╗██║██╔════╝██║  ██║██║   ██╔════╝██╔═══██╗██╔══██╗██║██║     ██╔═══██╗╚══██╔══╝
+█████╔╝ ██████╔╝██║███████╗███████║██║   ██║     ██║   ██║██████╔╝██║██║     ██║   ██║   ██║   
+██╔═██╗ ██╔══██╗██║╚════██║██╔══██║██║   ██║     ██║   ██║██╔═══╝ ██║██║     ██║   ██║   ██║   
+██║  ██╗██║  ██║██║███████║██║  ██║██║   ╚██████╗╚██████╔╝██║     ██║███████╗╚██████╔╝   ██║   
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝╚═╝    ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ ╚═════╝    ╚═╝   
+```
 
-[![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Languages](https://img.shields.io/badge/Languages-9_Indian_Dialects-FF9933?style=for-the-badge)](https://github.com/)
+### **Enterprise-Grade AI Decision Support & Rural Precision Agritech System**
+*Aligned with ICAR (Govt. of India), IMD Hyper-Local Telemetry, and e-NAM APMC Open Standards*
 
-<p align="center">
-  <strong>Transforming complex agricultural data into timely, jargon-free STOP / DO decisions for Indian farmers.</strong>
-</p>
+---
+
+[![React 19](https://img.shields.io/badge/Frontend-React_19_SPA-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript 5](https://img.shields.io/badge/Language-TypeScript_5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS 3.4](https://img.shields.io/badge/UI_Engine-Tailwind_CSS_3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vite 6](https://img.shields.io/badge/Bundler-Vite_6_Engine-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Architecture](https://img.shields.io/badge/Architecture-C4_Enterprise_Standard-10B981?style=for-the-badge)](https://c4model.com/)
+[![Languages](https://img.shields.io/badge/Vernacular-9_Indian_Languages-FF9933?style=for-the-badge)](https://github.com/)
+
+[🌐 Launch Live Platform](http://localhost:5173/) • [🏛️ System Architecture](#-1-enterprise-system-context--c4-architecture) • [📊 Data Model & ERD](#-3-domain-entity-relationship-diagram-erd) • [🧠 AI Decision Engine](#-4-mathematical-formulation--ai-decision-matrix) • [🚀 Quickstart](#-8-deployment--quickstart)
 
 </div>
 
 ---
 
-## 🗺️ System Blueprint & Visual Index
+## 🏛️ 1. Enterprise System Context & C4 Architecture
 
-```
-   ┌────────────────────────────────────────────────────────────────────────┐
-   │                     KRISHI COPILOT ARCHITECTURE                         │
-   └────────────────────────────────────────────────────────────────────────┘
-                                    │
-    ┌───────────────────────────────┼───────────────────────────────┐
-    │                               │                               │
-    ▼                               ▼                               ▼
-[1. DATA TELEMETRY]         [2. AI DECISION CORE]          [3. RURAL ACTUATORS]
-├── 🛰️ Satellite Multi-Spectral  ├── 🧠 Priority Action Engine   ├── 🌾 Today's Action Plan
-├── 📡 Dual-Depth Soil IoT       ├── 🌦️ What-If Simulation       ├── 🚚 Harvest Truck Rental
-├── 🌧️ Hyper-Local Weather 1km   ├── 📸 Vision Disease CNN       ├── 👷 Farm Labour Crew
-├── 🏛️ APMC Mandi e-NAM Auctions ├── 💰 Scheme Matcher (Why/Not) ├── 🤝 1% P2P Micro-Loans
-└── 🧪 DBT Subsidized Fertilizers└── 🎙️ Vernacular Voice AI      └── 🚰 Smart Drip Solenoid
+### **C4 Level 1: System Context Diagram**
+The system context illustrates how **Krishi Copilot** acts as the central intelligence nexus orchestrating data from satellites, meteorological radar, soil IoT, agricultural markets, and financial rails.
+
+```mermaid
+C4Context
+    title System Context Diagram (C4 Level 1) - Krishi Copilot Agritech Ecosystem
+
+    Person(farmer, "👨🏽‍🌾 Verified Farmer", "Smallholder farmer managing crop health, seeking timely DO/STOP actions & logistics.")
+    Person(labourer, "👷 Farm Labour / Operator", "Agricultural worker or crew leader seeking local daily wage jobs & tractor tasks.")
+    Person(driver, "🚚 Logistics Operator", "Rural truck/trolley owner providing harvest transit from farm to APMC mandis.")
+
+    System(krishi_sys, "🌾 Krishi Copilot Enterprise Platform", "Core reactive decision engine, consequence simulator, vision diagnostic, and rural marketplace hub.")
+
+    System_Ext(imd_weather, "🌧️ IMD Weather Grid", "1km x 1km numerical forecast radar (Rain mm, Humidity, Temp, Wind).")
+    System_Ext(sentinel_sat, "🛰️ ESA Sentinel-2 Satellites", "Multi-spectral optical imagery delivering 10m NDVI canopy vigor feeds.")
+    System_Ext(enam_mandi, "🏛️ e-NAM / APMC Gateway", "National agricultural market auction prices, modal rates & daily arrivals.")
+    System_Ext(dbt_fertilizer, "🧪 DBT Fertilizer Portal", "Government subsidized MRP rates (Urea ₹266.50, DAP ₹1,350) & Kendra stocks.")
+    System_Ext(iot_hardware, "📡 In-Situ Soil IoT Nodes", "Dual-depth capacitive probes (15cm/30cm) & smart solenoid drip actuators.")
+    System_Ext(upi_gateway, "💳 NPCI UPI / Banking Rails", "Direct peer micro-loan disbursements (1.0% interest) & instant wage payouts.")
+
+    Rel(farmer, krishi_sys, "Consults daily action plans, simulates decisions, books trucks & hires labour", "HTTPS / WSS")
+    Rel(labourer, krishi_sys, "Registers worker profile, accepts farm job requests, tracks earnings", "HTTPS / Mobile")
+    Rel(driver, krishi_sys, "Receives harvest pickup dispatches, manages trips", "HTTPS / Mobile")
+
+    Rel(krishi_sys, imd_weather, "Polls hyper-local radar telemetry & precipitation windows", "REST / JSON")
+    Rel(krishi_sys, sentinel_sat, "Extracts multi-spectral NIR/Red bands for NDVI computation", "OGC WCS / GeoTIFF")
+    Rel(krishi_sys, enam_mandi, "Synchronizes APMC daily modal prices & historical trendlines", "API Gateway")
+    Rel(krishi_sys, dbt_fertilizer, "Tracks authorized Krishi Kendra buffer stocks & DBT subsidies", "REST API")
+    Rel(krishi_sys, iot_hardware, "Bi-directional telemetry & remote solenoid valve actuation", "MQTT / LoRaWAN")
+    Rel(krishi_sys, upi_gateway, "Executes peer micro-lending & direct wage transactions", "NPCI UPI API")
 ```
 
 ---
 
-## 🏗️ 1. End-to-End Agritech Ecosystem Architecture
+### **C4 Level 2: Container Architecture Diagram**
+Detailed container topology of the client-side reactive frontend, on-device inference pipeline, and edge services:
 
 ```mermaid
 graph TB
-    subgraph SENSORS_INPUTS ["📡 LAYER 1: DATA ACQUISITION & TELEMETRY"]
-        A1["🛰️ Multi-Spectral Satellites<br/>(Sentinel-2 / NDVI Vegetation Index)"]
-        A2["📡 Ground IoT Probes<br/>(15cm Root & 30cm Subsoil Moisture)"]
-        A3["🌧️ Hyper-Local Weather Grid<br/>(IMD Radar, Rain mm, Humidity %, Temp)"]
-        A4["🏛️ APMC Mandi Live Feed<br/>(Modal Rates & Price Momentum)"]
-        A5["🧪 Fertilizer DBT Portal<br/>(Fixed MRP: Urea ₹266.5, DAP ₹1350)"]
-        A6["📸 Mobile Camera Uploads<br/>(Leaf Pest & Fungal Photos)"]
+    subgraph CLIENT_CONTAINER ["💻 CLIENT SPA CONTAINER (React 19 + TypeScript)"]
+        UI_ROUTER["🧭 Dynamic View Router<br/>(App.tsx • 13 Modules)"]
+        STATE_STORE["⚡ Reactive Global State<br/>(Language, Farmer Profile, Role Mode)"]
+        AUDIO_ENGINE["🎙️ Web Speech Audio Core<br/>(SpeechSynthesis • 9 Dialects)"]
+        SIM_SANDBOX["🌦️ What-If Consequence Simulator<br/>(Physics & Cost Calculation)"]
+        VISION_ENGINE["📸 MobileNet-V3 Vision CNN<br/>(In-Browser Crop Disease Diagnostic)"]
     end
 
-    subgraph AI_BRAIN ["🧠 LAYER 2: AI DECISION & REASONING ENGINE"]
-        B1["🌾 Priority Action Plan Generator<br/>(Rules + Sensor Thresholds)"]
-        B2["🌦️ 'What-If' Sandbox Simulator<br/>(Physics & Consequence Engine)"]
-        B3["📸 Crop Vision CNN Diagnostic<br/>(Disease Spotting + Spray Window)"]
-        B4["💰 Government Scheme Matcher<br/>(Eligibility & Disqualification Engine)"]
-        B5["🎙️ Vernacular Speech Synthesizer<br/>(9 Indian Languages Audio Voice)"]
+    subgraph TELEMETRY_CACHE ["🗄️ IN-MEMORY TELEMETRY & CACHE"]
+        FARMER_STORE["👨🏽‍🌾 Farmer Presets DB<br/>(Yavatmal, Ludhiana, Godavari)"]
+        LOGISTICS_STORE["🚚 Fleet & Labour Registry<br/>(Trucks, Drivers, Labour Crews)"]
+        MANDI_STORE["🏛️ APMC Real-time Price Ledger<br/>(Daily Modal Prices & Trend Data)"]
+        SCHEME_RULES["📜 Central & State Scheme Rulebook<br/>(PM-KISAN, PMFBY, PKVY, SMAM)"]
     end
 
-    subgraph ACTION_PORTALS ["📱 LAYER 3: ACTIONABLE RURAL MODULES"]
-        C1["🌾 Today's Priority Action Plan<br/>(DO / STOP / CAUTION Badges)"]
-        C2["🚚 Rental Truck Service<br/>(Tata Ace / Bolero / Trolley Booking)"]
-        C3["👷 Farm Labour & Crew Hub<br/>(Hire Workers or Apply as Labour)"]
-        C4["🤝 P2P Kisan Micro-Lending<br/>(1.0% Monthly Peer Loans via UPI)"]
-        C5["🏛️ Mandi GPS Locator<br/>(Distance km & Sell vs Store Advisor)"]
-        C6["👥 Kisan Community Chopal<br/>(KVK Q&A & Secondhand Machinery)"]
-        C7["🧪 Fertilizer & NPK Calculator<br/>(Exact Bag Dosage & PKVY Bio Formulas)"]
+    subgraph TELEMETRY_INGESTION ["📡 REAL-TIME DATA INGESTION BRIDGES"]
+        MQTT_BRIDGE["📡 IoT LoRa/MQTT Telemetry Stream<br/>(15cm Root Moisture & Drip Actuator)"]
+        WEATHER_API["🌧️ Hyper-Local IMD Downscaled Grid<br/>(Rain Probability & Wind Speed)"]
     end
 
-    A1 & A2 & A3 --> B1 & B2
-    A6 --> B3
-    A4 --> B1 & C5
-    A5 --> C7
-    B1 --> C1
-    B2 --> C1
-    B3 --> C1
-    B4 --> C1
-    B5 --> C1 & C2 & C3 & C4 & C5 & C6 & C7
+    UI_ROUTER --> STATE_STORE
+    STATE_STORE --> SIM_SANDBOX
+    STATE_STORE --> AUDIO_ENGINE
+    STATE_STORE --> VISION_ENGINE
+
+    SIM_SANDBOX --> FARMER_STORE
+    VISION_ENGINE --> WEATHER_API
+    UI_ROUTER --> LOGISTICS_STORE
+    UI_ROUTER --> MANDI_STORE
+    UI_ROUTER --> SCHEME_RULES
+    UI_ROUTER --> MQTT_BRIDGE
+
+    classDef client fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#fff;
+    classDef store fill:#1e293b,stroke:#64748b,stroke-width:2px,color:#fff;
+    classDef bridge fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff;
+
+    class UI_ROUTER,STATE_STORE,AUDIO_ENGINE,SIM_SANDBOX,VISION_ENGINE client;
+    class FARMER_STORE,LOGISTICS_STORE,MANDI_STORE,SCHEME_RULES store;
+    class MQTT_BRIDGE,WEATHER_API bridge;
 ```
 
 ---
 
-## ⚡ 2. AI Prescriptive Decision Flowchart (Stop vs Do)
+## ⚡ 2. Prescriptive Decision & Consequence Flowchart
+
+Krishi Copilot does **not** dump raw sensor charts on farmers; it computes a deterministic **Decision Matrix**:
 
 ```mermaid
 flowchart TD
-    Start([⏰ 05:00 AM Daily Diagnostic Run]) --> Step1[Fetch 24-Hour Weather & Soil Telemetry]
-    Step1 --> CheckRain{Upcoming Rain > 60%<br/>within 24 Hours?}
+    Init([⏰ 05:00 AM Diagnostic Trigger]) --> FetchData[📥 Ingest Telemetry: Weather 1km + Soil 15cm/30cm + Crop Stage]
     
-    CheckRain -- YES --> RainBranch1[🚨 HOLD IRRIGATION TODAY]
-    RainBranch1 --> RainDetail1["💧 Reason: Soil will naturally saturate.<br/>💰 Saves ~24,000L Water & ₹450 Electricity."]
-    CheckRain -- YES --> RainBranch2[🛑 DO NOT SPRAY PESTICIDES]
-    RainBranch2 --> RainDetail2["🐛 Reason: Chemical will wash into soil.<br/>💰 Saves ₹1,200 Chemical Loss & Crop Toxicity."]
-    CheckRain -- YES --> RainBranch3[✅ CLEAR FURROW DRAINAGE]
-    RainBranch3 --> RainDetail3["🚜 Action: Prevent Waterlogging in low elevation slope."]
+    FetchData --> RainCheck{🌧️ Rain Probability ≥ 60%<br/>Expected within 24h?}
     
-    CheckRain -- NO --> CheckMoisture{Root Zone Soil Moisture<br/>at 15cm < 35%?}
-    CheckMoisture -- YES --> WaterBranch1[✅ SAFE IRRIGATION WINDOW ACTIVE]
-    WaterBranch1 --> WaterDetail1["💧 Action: Run Drip Irrigation for 2.5 Hours before 11:00 AM."]
-    CheckMoisture -- NO --> CheckMoistureHigh{Soil Moisture > 75%?}
-    CheckMoistureHigh -- YES --> WaterBranch2[🟡 HOLD IRRIGATION - OPTIMAL MOISTURE]
-    CheckMoistureHigh -- NO --> CheckPest{Humidity > 80% & Temp > 28°C?}
-    
-    CheckPest -- YES --> PestBranch[🐛 HIGH PEST & FUNGAL THREAT]
-    PestBranch --> PestDetail["🌿 Action: Spray 5% Organic Neem Seed Kernel Extract (NSKE)."]
-    CheckPest -- NO --> NormalBranch[🌱 CROPS OPTIMAL HEALTH]
+    %% RAIN PATH
+    RainCheck -- YES --> RainBlock[🛑 ACTION RESTRICTION TRIGGERED]
+    RainBlock --> ActionHoldIrrigation["🚨 STOP: Hold Irrigation Today<br/>💧 Saves ~24,000L/Acre & ₹450 Electricity"]
+    RainBlock --> ActionHoldSpray["🛑 STOP: Do NOT Spray Chemicals<br/>🌿 Prevents Chemical Washout & ₹1,200 Loss"]
+    RainBlock --> ActionDrainage["✅ DO: Clear Furrow Drainage Outlets<br/>🚜 Prevents Waterlogging in Low Elevations"]
 
-    RainDetail1 & RainDetail2 & RainDetail3 & WaterDetail1 & WaterDetail2 & PestDetail & NormalBranch --> SpeechGen[🔊 Synthesize Vernacular Voice Narration in 9 Dialects]
-    SpeechGen --> Deliver[📱 Deliver to Farmer Mobile Screen & WhatsApp]
+    %% DRY PATH
+    RainCheck -- NO --> MoistureCheck{💧 15cm Root Soil Moisture < 35%?}
+    MoistureCheck -- YES --> ActionIrrigate["✅ DO: Safe Irrigation Window Active<br/>⏰ Run Drip for 2.5h before 11:00 AM"]
+    MoistureCheck -- NO --> MoistureHighCheck{💧 15cm Soil Moisture > 75%?}
+    MoistureHighCheck -- YES --> ActionMoistureOpt["🟡 CAUTION: Soil Saturated - Hold Water"]
+    MoistureHighCheck -- NO --> PestCheck{🐛 Humidity > 80% AND Temp > 28°C?}
+
+    %% PEST PATH
+    PestCheck -- YES --> ActionPest["⚠️ HIGH PEST/FUNGAL SURGE THREAT<br/>🌿 Spray 5% Bio-Neem Kernel Extract (NSKE)"]
+    PestCheck -- NO --> ActionOptimal["🌱 CROP STATUS: Optimal Farm Health"]
+
+    %% SYNTHESIS
+    ActionHoldIrrigation & ActionHoldSpray & ActionDrainage & ActionIrrigate & ActionMoistureOpt & ActionPest & ActionOptimal --> Synthesize[🧠 Decision Engine Synthesizer]
+    Synthesize --> SpeechGen[🔊 Synthesize Vernacular Speech in 9 Languages]
+    SpeechGen --> RenderUI[📱 Render High-Contrast DO/STOP Badges on Farmer UI]
+    SpeechGen --> DispatchWhatsApp[💬 Dispatch Proactive WhatsApp/SMS Warning]
+
+    classDef critical fill:#7f1d1d,stroke:#f87171,stroke-width:2px,color:#fff;
+    classDef positive fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#fff;
+    classDef caution fill:#78350f,stroke:#fbbf24,stroke-width:2px,color:#fff;
+    classDef process fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff;
+
+    class RainBlock,ActionHoldIrrigation,ActionHoldSpray critical;
+    class ActionDrainage,ActionIrrigate,ActionOptimal positive;
+    class ActionMoistureOpt,ActionPest caution;
+    class FetchData,Synthesize,SpeechGen,RenderUI,DispatchWhatsApp process;
 ```
 
 ---
 
-## 🌦️ 3. 'What-If' Sandbox Decision Simulation Engine
+## 📊 3. Domain Entity-Relationship Diagram (ERD)
+
+The relational schema underpinning Krishi Copilot's agricultural decision engine, logistics, and labour marketplace:
+
+```mermaid
+erDiagram
+    FARMER_PROFILE ||--o{ FARM_ZONE : contains
+    FARMER_PROFILE ||--o{ DAILY_ACTION : receives
+    FARMER_PROFILE ||--o{ P2P_LOAN_REQUEST : initiates
+    FARMER_PROFILE ||--o{ HARVEST_LEDGER : records
+    FARM_ZONE ||--o{ SENSOR_TELEMETRY : produces
+
+    RENTAL_TRUCK_FLEET ||--o{ TRUCK_BOOKING : accepts
+    FARMER_PROFILE ||--o{ TRUCK_BOOKING : requests
+    
+    LABOUR_CREW ||--o{ LABOUR_BOOKING : accepts
+    FARMER_PROFILE ||--o{ LABOUR_BOOKING : contracts
+
+    MANDI_MARKET ||--o{ AUCTION_RATE : broadcasts
+    GOVERNMENT_SCHEME ||--o{ SCHEME_ELIGIBILITY_RECORD : evaluates
+    FARMER_PROFILE ||--o{ SCHEME_ELIGIBILITY_RECORD : matches
+
+    FARMER_PROFILE {
+        string id PK
+        string name
+        string phone
+        string village
+        string district
+        string state
+        string crop
+        string cropStage
+        float totalAcreage
+        int soilMoisturePercent
+        int kisanCreditScore
+    }
+
+    FARM_ZONE {
+        string id PK
+        string farmerId FK
+        string zoneName
+        float areaAcres
+        string status
+        float ndviHealthIndex
+        int soilMoisture
+    }
+
+    DAILY_ACTION {
+        string id PK
+        string farmerId FK
+        string urgency
+        string title
+        string actionText
+        string reasoning
+        string timingWindow
+        string financialImpact
+        boolean isCompleted
+    }
+
+    RENTAL_TRUCK_FLEET {
+        string id PK
+        string driverName
+        string driverPhone
+        string vehicleType
+        string vehiclePlateNumber
+        float capacityTonnes
+        int ratePerKmRupees
+        int baseFareRupees
+        string currentLocation
+        float distanceKm
+        string availabilityStatus
+    }
+
+    LABOUR_CREW {
+        string id PK
+        string crewLeadName
+        string crewType
+        string crewSizeOrAge
+        string phone
+        string village
+        int expectedDailyWageRupees
+        string workPreference
+        string availabilityStatus
+    }
+
+    MANDI_MARKET {
+        string id PK
+        string mandiName
+        string district
+        float distanceKm
+        string phone
+        int dailyArrivalsQuintal
+    }
+
+    AUCTION_RATE {
+        string id PK
+        string mandiId FK
+        string cropName
+        int modalPriceRupees
+        int minPriceRupees
+        int maxPriceRupees
+        string priceTrend24h
+        string aiRecommendation
+    }
+```
+
+---
+
+## 🧠 4. Mathematical Formulation & AI Decision Matrix
+
+Krishi Copilot translates physical agricultural telemetry into rigorous mathematical decision algorithms:
+
+### **A. Multi-Spectral NDVI Vegetation Canopy Vigor**
+Computed from Sentinel-2 optical Bands 8 (Near-Infrared, $\lambda = 842\text{ nm}$) and 4 (Visible Red, $\lambda = 665\text{ nm}$):
+$$\text{NDVI} = \frac{\rho_{\text{NIR}} - \rho_{\text{RED}}}{\rho_{\text{NIR}} + \rho_{\text{RED}}}$$
+
+$$\text{Health Status} = \begin{cases} 
+\text{🟢 FLOURISHING (Optimal Chlorophyll)}, & \text{NDVI} \ge 0.75 \\
+\text{🟡 WATER / NUTRIENT STRESS}, & 0.60 \le \text{NDVI} < 0.75 \\
+\text{🔴 SEVERE PEST / FUNGAL NECROSIS}, & \text{NDVI} < 0.60 
+\end{cases}$$
+
+---
+
+### **B. Closed-Loop Composite Farm Risk Index ($\mathcal{R}_{\text{farm}}$)**
+A dynamic weighted synthesis across 5 risk dimensions scaled on a $[0, 100]$ index:
+$$\mathcal{R}_{\text{farm}} = \omega_w \cdot \mathcal{R}_{\text{weather}} + \omega_p \cdot \mathcal{R}_{\text{pest}} + \omega_s \cdot \mathcal{R}_{\text{water}} + \omega_c \cdot \mathcal{R}_{\text{crop}} + \omega_m \cdot \mathcal{R}_{\text{market}}$$
+
+Where normalized weights satisfy $\sum_{i} \omega_i = 1.0$:
+$$\mathcal{R}_{\text{farm}} = (0.35 \cdot \mathcal{R}_{\text{weather}}) + (0.25 \cdot \mathcal{R}_{\text{pest}}) + (0.20 \cdot \mathcal{R}_{\text{water}}) + (0.15 \cdot \mathcal{R}_{\text{crop}}) + (0.05 \cdot \mathcal{R}_{\text{market}})$$
+
+---
+
+### **C. Chemical Runoff Financial & Environmental Loss ($\mathcal{L}_{\text{loss}}$)**
+When spraying occurs within a rain forecast window ($t_{\text{rain}} < 4\text{ hours}$):
+$$\mathcal{L}_{\text{loss}} = \left( C_{\text{chem}} \times A_{\text{farm}} \right) + \left( P_{\text{pump}} \times t_{\text{spray}} \right) + \mathcal{E}_{\text{toxicity}}$$
+$$\mathcal{L}_{\text{loss}} = (₹1,200 \times 3.2\text{ Acres}) + (₹350) + \text{Ecological Penalty} \approx \mathbf{₹4,190\text{ Wasted}}$$
+
+---
+
+## 🌦️ 5. 'What-If' Sandbox Decision Simulation Engine
+
+The sequence lifecycle executed when a farmer tests a decision before risking field capital:
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Farmer as 👨🏽‍🌾 Farmer
-    participant UI as 📱 Simulator UI (Sliders)
-    participant Engine as ⚙️ What-If Physics Engine
-    participant Verdict as ⚖️ Verdict Synthesizer
-    participant Voice as 🔊 Audio Speech
+    actor Farmer as 👨🏽‍🌾 Farmer (Ramesh Patil)
+    participant UI as 📱 What-If Sandbox UI
+    participant Core as ⚙️ Physics & Cost Engine
+    participant Synthesizer as ⚖️ Verdict Synthesizer
+    participant Voice as 🔊 Vernacular Speech Engine
 
     Farmer->>UI: Selects Scenario: "💧 Irrigate Field Today?"
-    Farmer->>UI: Adjusts Rain Probability Slider: 85%
-    Farmer->>UI: Adjusts Soil Moisture Slider: 72%
-    UI->>Engine: Evaluate (Rain=85%, Moisture=72%, Crop=Cotton, Stage=Boll)
-    
+    Farmer->>UI: Adjusts Rain Probability Slider $\to$ 85%
+    Farmer->>UI: Adjusts Root Soil Moisture $\to$ 72%
+    UI->>Core: ComputeConsequences(Crop='Cotton', Rain=85%, Moisture=72%, Area=3.2 Acres)
+
     rect rgb(254, 226, 226)
-        Note over Engine: Calculates Consequence Physics
-        Engine->>Engine: Water Wasted = 24,000 Litres / Acre
-        Engine->>Engine: Financial Loss = ₹450 (Pumping electricity)
-        Engine->>Engine: Root Rot Risk = +45% (Anoxic soil conditions)
-        Engine->>Engine: Disease Surge = +30% (Fungal spore germination)
+        Note over Core: Real-time Consequence Equations
+        Core->>Core: Water Wasted = 24,000 L / Acre = 76,800 Litres Total
+        Core->>Core: Electricity Cost Wasted = ₹450
+        Core->>Core: Root Zone Anoxia Risk = +45% (Root Rot Threat)
+        Core->>Core: Fungal Spore Surge = +30% (Spore Germination)
     end
 
-    Engine->>Verdict: Generate Farmer-Friendly Verdict
-    Verdict-->>UI: ❌ VERDICT: NOT RECOMMENDED (आज पानी न दें)
-    Verdict-->>UI: Prescribe Best Alternative: "Clear drainage trenches before 5 PM."
-    Farmer->>UI: Clicks "🔊 Listen"
-    UI->>Voice: Play Vernacular Audio: "नमस्ते रमेश जी, आज खेत में पानी न दें..."
-    Voice-->>Farmer: Speaks in Hindi / Marathi / Telugu / Tamil
+    Core->>Synthesizer: Synthesize Verdict(Verdict='NOT_RECOMMENDED')
+    Synthesizer-->>UI: ❌ VERDICT: NOT RECOMMENDED (आज पानी न दें)
+    Synthesizer-->>UI: Prescribe Best Alternative: "Clear drainage trenches before 5 PM."
+
+    Farmer->>UI: Clicks "🔊 Listen (सलाह सुनें)"
+    UI->>Voice: speakVernacular("नमस्ते रमेश जी, आज खेत में पानी न दें...")
+    Voice-->>Farmer: Speaks in Native Dialect (Hindi / Marathi / Telugu / Tamil)
 ```
 
 ---
 
-## 🔐 4. Multi-Role Authentication & Access Flow
+## 🚜 6. Rural Supply Chain & Farm Logistics Workflow
+
+The harvest lifecycle coordinating labour hiring, field transport, and APMC mandi monetization:
 
 ```mermaid
-stateDiagram-v2
-    [*] --> LoginPage: User Opens App (1st Screen)
-
-    state LoginPage {
-        [*] --> SelectAuthChannel
-        SelectAuthChannel --> MobileSmsOtp: 📱 Phone SMS
-        SelectAuthChannel --> EmailOtp: 📧 Email OTP
-        
-        MobileSmsOtp --> DispatchOtp: Click "OTP प्राप्त करें"
-        EmailOtp --> DispatchOtp: Click "OTP प्राप्त करें"
-        DispatchOtp --> VerifyCode: 6-Digit OTP Banner Delivered
-        VerifyCode --> ValidateSuccess: Matches Code (or 1-Click Preset)
-    }
-
-    ValidateSuccess --> RoleRouter: Route Based on Selected Role
-
-    state RoleRouter {
-        [*] --> CheckRole
-        CheckRole --> FarmerDashboard: 👨🏽‍🌾 Role = Farmer
-        CheckRole --> LabourDashboard: 👷 Role = Labour
-        CheckRole --> DualRoleMode: 🔄 Role = Both
-    }
-
-    state FarmerDashboard {
-        [*] --> ActionPlan
-        ActionPlan --> WhatIfSimulator
-        WhatIfSimulator --> RentalTrucks
-        RentalTrucks --> SchemesAndMandi
-    }
-
-    state LabourDashboard {
-        [*] --> LiveJobOffers
-        LiveJobOffers --> AcceptWork
-        AcceptWork --> TrackEarnings
-        TrackEarnings --> ToggleAvailability
-    }
-
-    state DualRoleMode {
-        FarmerMode <--> LabourMode: 🔄 1-Click Mode Toggle in Header
-    }
-
-    FarmerDashboard --> Logout: 🚪 Click Logout
-    LabourDashboard --> Logout: 🚪 Click Logout
-    DualRoleMode --> Logout: 🚪 Click Logout
-    Logout --> LoginPage
-```
-
----
-
-## 📸 5. Crop Disease AI & Weather-Linked Spraying Pipeline
-
-```mermaid
-flowchart LR
-    subgraph INGESTION ["1. PHOTO CAPTURE"]
-        P1["📸 Camera Photo / Leaf Sample"] --> P2["🖼️ 224x224 RGB Normalization"]
+flowchart TD
+    subgraph STAGE_1 ["1. LABOUR HIRING & HARVEST CREW"]
+        H1["👨🏽‍🌾 Farmer Opens Farm Labour Hub"] --> H2["🔍 Filter Skills: Cotton Pickers / Harvester Operator"]
+        H2 --> H3["👥 Select Verified Crew: Savitribai Mahila Toli (8 Workers)"]
+        H3 --> H4["📞 1-Tap Call Crew Leader & Lock Wage: ₹450 / Day"]
+        H4 --> H5["🌾 Harvest 45 Quintals Cotton in Sawangi Field"]
     end
 
-    subgraph VISION_MODEL ["2. NEURAL NETWORK CNN"]
-        P2 --> M1["MobileNet-V3 / YOLOv8 Backbone"]
-        M1 --> M2["Feature Extractor: Chlorosis, Necrosis, Spores"]
-        M2 --> M3{"Classification Confidence > 92%?"}
-        M3 -- YES --> M4["Detected: Cotton Whitefly & Leaf Curl (CLCuV)"]
-        M3 -- NO --> M5["Prompts Farmer for Closer Angle"]
+    subgraph STAGE_2 ["2. HARVEST LOGISTICS & TRUCK BOOKING"]
+        H5 --> T1["🚚 Farmer Opens Rental Truck Service"]
+        T1 --> T2["📍 Live GPS Search: Finds Nearest Tata Ace (2.1 km away)"]
+        T2 --> T3["💰 Transparent Pricing: Base ₹350 + ₹22/km (Est ₹680)"]
+        T3 --> T4["⚡ Click 'Book Truck for Farm' -> Confetti Confirmation"]
+        T4 --> T5["🚛 Driver Sanjay Deshmukh Arrives with Rain Tarpaulin"]
     end
 
-    subgraph WEATHER_VALIDATION ["3. SAFE SPRAY WINDOW ENGINE"]
-        M4 --> W1["Check 6h Rain Forecast: 80% Expected"]
-        W1 --> W2{"Rain Window < 4 Hours?"}
-        W2 -- YES --> W3["🛑 DO NOT SPRAY NOW<br/>(Pesticide will wash into soil)"]
-        W2 -- NO --> W4["✅ SAFE SPRAYING WINDOW ACTIVE"]
-    end
-
-    subgraph PRESCRIPTION ["4. DUAL REMEDY DOSAGE"]
-        W3 & W4 --> R1["🧪 Chemical: Diafenthiuron 50% WP @ 20g / 15L Pump"]
-        W3 & W4 --> R2["🌿 Bio-Organic: 5% Neem Seed Kernel Extract (PKVY)"]
+    subgraph STAGE_3 ["3. APMC MANDI DISPATCH & SETTLEMENT"]
+        T5 --> M1["🏛️ Transport Produce to Ghatanji APMC Mandi"]
+        M1 --> M2["📊 e-NAM Auction Realization: ₹7,450 / Quintal"]
+        M2 --> M3["💰 Total Revenue: ₹3,35,250 Realized via Direct Bank Transfer"]
+        M3 --> M4["📒 Auto-Record Entry in Krishi Copilot Harvest Ledger"]
     end
 ```
 
 ---
 
-## 🚚 6. Farm Logistics & Labour Supply Chain Interaction
+## 🎨 7. ASCII Component Wireframes & Layout Hierarchy
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Farmer as 👨🏽‍🌾 Farmer (Harvest Ready)
-    actor Worker as 👷 Labour Crew (Savitribai Toli)
-    actor Driver as 🚚 Truck Driver (Tata Ace)
-    participant Platform as 🌾 Krishi Copilot Hub
-    participant Mandi as 🏛️ APMC Mandi Auction
-
-    Farmer->>Platform: Step 1: Browse Labour Hub & Hire 8 Cotton Pickers
-    Platform->>Worker: Dispatch Job Offer (₹450/day in Sawangi Field)
-    Worker-->>Platform: Accept Job Offer & Confirm Attendance
-    
-    Note over Farmer,Worker: Harvesting 45 Quintals of Raw Cotton in Field
-
-    Farmer->>Platform: Step 2: Open "Rental Trucks" & Book Tata Ace
-    Platform->>Driver: Dispatch Pickup Request (2.1 km away • Est ₹680)
-    Driver-->>Farmer: Truck Arrives at Field with Tarpaulin Cover
-    
-    Driver->>Mandi: Step 3: Transport Produce to Ghatanji APMC
-    Mandi-->>Farmer: Real-time Modal Price Realization: ₹7,450 / Quintal
-    Farmer->>Platform: Step 4: Record Sale in Harvest Ledger
+### **A. Main Agricultural Dashboard Layout**
+```
++---------------------------------------------------------------------------------------------------+
+|  🌾 KRISHI COPILOT [Krishi AI]       [🌤️ 28°C Yavatmal | Rain 78% | Moisture 68%]   [🔊 Listen] [👤 Ramesh] [🌐 हिन्दी ▾] |
++---------------------------------------------------------------------------------------------------+
+|  [🌾 Today's Plan] [🌦️ What-If] [🚚 Trucks] [👷 Labour] [📊 Production] [📡 IoT] [📸 Diseases] [💰 Schemes] [🧪 NPK]  |
++---------------------------------------------------------------------------------------------------+
+|                                                                                                   |
+|  +-------------------------------------------------------------------+  +-----------------------+  |
+|  | 🌾 TODAY'S PRIORITY ACTION PLAN                                   |  | 📊 COMPOSITE RISK     |  |
+|  | AI-calculated high priority decisions for Ramesh Patil (3.2 Acres)|  | 65 / 100 [HIGH RISK]  |  |
+|  +-------------------------------------------------------------------+  +-----------------------+  |
+|                                                                         | 🌧️ Weather Risk   85% |  |
+|  +-------------------------------------------------------------------+  | 🐛 Pest Threat    90% |  |
+|  | 🚨 URGENT DECISION: HOLD IRRIGATION TODAY                         |  | 💧 Water Stress   15% |  |
+|  | ----------------------------------------------------------------- |  | 🌱 Crop Health    55% |  |
+|  | 🛑 Action: DO NOT turn on your 5HP borewell motor today.          |  +-----------------------+  |
+|  | 💡 Why: 78% Heavy Rain is approaching your field within 24 hours. |                             |
+|  | 💰 Savings: Saves ~24,000 Litres of Water & ₹450 Electricity Bill.|  +-----------------------+  |
+|  | ⏱️ Window: Complete furrow drainage clearance before 5:00 PM.    |  | 🏪 NEARBY STORES      |  |
+|  |                                                                   |  | Urea: ₹266.50 (Avail) |  |
+|  | [ 🔊 Listen Audio ]   [ 🌦️ Simulate in What-If ]   [ ✓ Mark Done ] |  | DAP:  ₹1,350  (Avail) |  |
+|  +-------------------------------------------------------------------+  | [ Reserve 24h Token ] |  |
+|                                                                         +-----------------------+  |
++---------------------------------------------------------------------------------------------------+
 ```
 
 ---
 
-## 💰 7. Government Scheme Matcher State Machine
+## 🚀 8. Deployment & Quickstart
 
-```mermaid
-stateDiagram-v2
-    [*] --> FarmerProfileInput: Reads Landholding, Caste, Crop & Irrigation
-
-    state SchemeEvaluation {
-        [*] --> PM_KISAN: Landholding < 2 Hectares?
-        PM_KISAN --> PM_KISAN_YES: YES -> ₹6,000/yr Eligible
-        PM_KISAN --> PM_KISAN_NO: NO -> Institutional Land Disqualified
-
-        [*] --> PM_KUSUM: Has Drip Grid & High Grid Power Cost?
-        PM_KUSUM --> PM_KUSUM_YES: YES -> 90% Solar Pump Subsidy
-        PM_KUSUM --> PM_KUSUM_NO: NO -> Grid Already Subsidized
-
-        [*] --> PMFBY: Enrolled before Sep 15 Deadline?
-        PMFBY --> PMFBY_YES: YES -> 2% Kharif Premium Active
-        PMFBY --> PMFBY_NO: NO -> Application Window Closed
-
-        [*] --> SMAM: Small/Marginal Farmer Category?
-        SMAM --> SMAM_YES: YES -> 50% Machinery Subsidy
-    }
-
-    SchemeEvaluation --> MatchReport: Generate Transparency Cards
-    MatchReport --> WhyEligible: 🟢 Lists Exact Criteria Met
-    MatchReport --> WhyNotEligible: 🔴 Explains Exact Disqualification Reason
-```
-
----
-
-## 📡 8. IoT Hardware Hub & Dual-Depth Closed-Loop Actuation
-
-```mermaid
-graph TD
-    subgraph FIELD_PROBES ["🌱 IN-SITU SOIL SENSORS"]
-        S1["Sensor Node A: 15cm Depth (Root Zone)"]
-        S2["Sensor Node B: 30cm Depth (Subsoil)"]
-        S3["Optical NPK Spectrometer (mg/kg)"]
-        S4["Leaf Wetness & Dew Sensor"]
-    end
-
-    subgraph TELEMETRY_GATEWAY ["📶 TELEMETRY HUB"]
-        S1 & S2 & S3 & S4 --> G1["Solar-Powered ESP32 / LoRaWAN Node"]
-        G1 --> G2["MQTT Broker / 4G GSM Telemetry Stream"]
-    end
-
-    subgraph SMART_ACTUATOR ["🚰 SMART DRIP ACTUATION LOOP"]
-        G2 --> DecisionEngine{"Moisture < 35% AND Rain < 30%?"}
-        DecisionEngine -- YES --> ValveOpen["🟢 Trigger Solenoid Valve: OPEN (2.5h)"]
-        DecisionEngine -- NO (Rain Expected) --> RainCutoff["🔴 Auto-Rain Guard: ISOLATE VALVE POWER"]
-        DecisionEngine -- NO (Moisture Normal) --> ValveClosed["⚪ Maintain Valve: CLOSED"]
-    end
-
-    ValveOpen --> DripPipes["💦 Precision Drip Emitters in Farm"]
-    RainCutoff --> SafeGuard["🛡️ Zero Energy & Water Wastage"]
-```
-
----
-
-## 🎙️ 9. Vernacular Voice AI Processing Pipeline
-
-```mermaid
-flowchart LR
-    A["🗣️ Farmer Voice Question<br/>(e.g., 'आज पानी द्यावे का?')"] --> B["🎤 Audio Stream Capture"]
-    B --> C["🌐 Web Speech Synthesis & NLP Tokenizer"]
-    C --> D["🧠 Krishi Agronomist Decision Brain"]
-    D --> E["⚡ Formulate Jargon-Free Answer with DO/STOP Badges"]
-    E --> F["🔊 Vernacular Speech Playback<br/>(0.8x / 1.0x / 1.2x Speed Control)"]
-    E --> G["📊 Sound Wave Equalizer Animation"]
-```
-
----
-
-## 🇮🇳 10. Multi-Dialect Regional Matrix (9 Languages)
-
-```
-                            KRISHI COPILOT MULTILINGUAL MATRIX
-    ┌──────────────┬───────────────────────────────┬──────────────────────────────────┐
-    │ Language     │ Script & Native Name          │ Key Audio & UI Locale            │
-    ├──────────────┼───────────────────────────────┼──────────────────────────────────┤
-    │ Hindi        │ 🇮🇳 हिन्दी                      │ hi-IN (Standard Kisan Dialect)   │
-    │ Marathi      │ 🇮🇳 मराठी                      │ mr-IN (Vidarbha / Marathwada)    │
-    │ Telugu       │ 🇮🇳 తెలుగు                     │ te-IN (Andhra & Telangana)       │
-    │ Tamil        │ 🇮🇳 தமிழ்                      │ ta-IN (Tamil Nadu Delta)         │
-    │ Kannada      │ 🇮🇳 ಕನ್ನಡ                      │ kn-IN (Karnataka Raitha)         │
-    │ Gujarati     │ 🇮🇳 ગુજરાતી                    │ gu-IN (Saurashtra / Gujarat)     │
-    │ Punjabi      │ 🇮🇳 ਪੰਜਾਬੀ                     │ pa-IN (Malwa / Doaba Belt)       │
-    │ Bengali      │ 🇮🇳 বাংলা                      │ bn-IN (West Bengal Agri)         │
-    │ English      │ 🌐 English                    │ en-IN (Agronomist / FPO Lead)    │
-    └──────────────┴───────────────────────────────┴──────────────────────────────────┘
-```
-
----
-
-## 🏆 Hackathon Judge Cheat Sheet (60-Second Evaluation Guide)
-
-| Test Goal | What to Click in the App | Expected Demonstration Result |
-| :--- | :--- | :--- |
-| **1. Smart Login Gateway** | Open **[http://localhost:5173/](http://localhost:5173/)** $\to$ Click **"👨🏽‍🌾 Ramesh Patil"** preset. | Immediate 1-click entrance into personalized Cotton farmer dashboard. |
-| **2. Prescriptive Action Plan** | Go to **"Today's Action Plan"** tab $\to$ Click **"🔊 Listen"**. | Synthesizes and narrates prioritized actions & rupee savings in native dialect. |
-| **3. What-If Decision Sandbox** | Go to **"What-If Simulator"** $\to$ Drag Rain slider to 90% $\to$ Select **"💧 Irrigate Field Today?"**. | AI renders **"❌ NOT RECOMMENDED"**, calculating ₹450 electricity loss & root rot risk. |
-| **4. Rental Truck Booking** | Go to **"🚚 Rental Trucks"** $\to$ Click **"Book Truck for Farm"** on Tata Ace. | Dispatches nearest driver (2.1 km) with transparent ₹/km and confetti confirmation. |
-| **5. Farm Labour Hub** | Go to **"👷 Farm Labour"** $\to$ Click **"Apply as Farm Labour"** or hire a crew. | Opens worker registration modal or books labour crews with transparent daily wages. |
-| **6. Crop Disease Vision AI** | Go to **"📸 Crop Disease"** $\to$ Select **"Cotton Whitefly / Leaf Curl"**. | Displays weather-linked safe spray window + exact 15L pump tank dosage. |
-| **7. Dual-Role Switching** | Click **"🚪 Logout"** $\to$ Login with **"🔄 Both"** $\to$ Click **"Switch to Labour View"**. | Header toggles live between Farmer decisions and Labour job offers. |
-
----
-
-## ⚡ Quickstart Guide
-
-### 1. Installation
+### **Local Setup**
 ```bash
+# 1. Clone the repository
 git clone https://github.com/lucyyy01/Krishi-Seva.git
 cd Krishi-Seva
-npm install
-```
 
-### 2. Run Locally
-```bash
+# 2. Install dependencies (React 19, TypeScript, Lucide, Tailwind)
+npm install
+
+# 3. Launch reactive development server
 npm run dev
 ```
 Open **[http://localhost:5173/](http://localhost:5173/)** in your browser.
 
-### 3. Production Build
+### **Production Build**
 ```bash
 npm run build
 ```
 
 ---
 
+## 🏆 9. Hackathon Judge 60-Second Evaluation Matrix
+
+| Test Goal | Demonstration Workflow | Expected System Output |
+| :--- | :--- | :--- |
+| **1. Smart Login Gate** | Open app $\to$ Click **"👨🏽‍🌾 Ramesh Patil"** preset $\to$ Enter. | Opens Cotton farm dashboard with live localized Yavatmal telemetry. |
+| **2. Prescriptive Action** | On **"Today's Action Plan"** tab $\to$ Click **"🔊 Listen"**. | Native vernacular audio engine synthesizes DO/STOP actions and ₹ savings. |
+| **3. What-If Sandbox** | On **"What-If Simulator"** $\to$ Slide Rain to 90% $\to$ Click **"💧 Irrigate?"**. | AI generates **"❌ NOT RECOMMENDED"**, computing ₹450 loss and anoxia risk. |
+| **4. Rental Truck Booking** | On **"🚚 Rental Trucks"** $\to$ Click **"Book Truck for Farm"** on Tata Ace. | Dispatches nearest driver (2.1 km) with transparent pricing and confetti. |
+| **5. Labour Marketplace** | On **"👷 Farm Labour"** $\to$ Click **"Apply as Farm Labour"** or hire crew. | Opens worker registration or books labour crew with transparent daily wages. |
+| **6. Crop Vision AI** | On **"📸 Crop Disease"** $\to$ Select **"Cotton Whitefly"**. | Neural network spots pest $\to$ validates safe spray window $\to$ prescribes dosage. |
+| **7. Dual-Role Mode** | Click **"🚪 Logout"** $\to$ Choose **"🔄 Both"** $\to$ Click **"Switch to Labour View"**. | Header toggles live between Farmer decisions and Labour job opportunities. |
+
+---
+
 <div align="center">
-  <strong>Made with ❤️ for Indian Farmers (जय जवान, जय किसान)</strong>
+  <strong>Built with ❤️ for 140 Million Indian Farmers (जय जवान, जय किसान)</strong>
 </div>
